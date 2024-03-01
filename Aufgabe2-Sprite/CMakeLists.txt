@@ -10,7 +10,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(${PROJECT_NAME} Aufgabe2.cpp
         ../Aufgabe3-Wuerfelspiel/Aufgabe3.cpp
-        ../Aufgabe4-Pflanzenklassen/Aufgabe4.cpp)
+        ../Aufgabe4-Pflanzenklassen/Aufgabe4.cpp
+        ../Aufgabe5-CustomDynamicArray/Aufgabe5.cpp)
 
 # Add config.h.in file
 configure_file(Aufgabe2_config.h.in config.h)
