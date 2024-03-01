@@ -1,0 +1,1 @@
+add_executable(Aufgabe6 Aufgabe6.cpp)
