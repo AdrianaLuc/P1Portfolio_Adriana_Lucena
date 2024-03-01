@@ -1,5 +1,6 @@
 ﻿cmake_minimum_required (VERSION 3.11)
 
-project(raylibstarter)
+project(P1Portfolio_Adriana_Lucena)
 
 add_subdirectory ("src")
+add_subdirectory ("Aufgabe1-Pap")
