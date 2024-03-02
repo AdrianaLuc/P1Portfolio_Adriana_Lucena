@@ -16,7 +16,9 @@ add_executable(${PROJECT_NAME} Aufgabe2.cpp
         ../Aufgabe7-RaylibSpriteKlasse/Aufgabe7.cpp
         ../Aufgabe8-LevelKlasse/Aufgabe8.cpp
         Sprite.cpp
-        Sprite.h)
+        Sprite.h
+        ../Aufgabe3-Wuerfelspiel/Functions.cpp
+        ../Aufgabe3-Wuerfelspiel/Functions.h)
 
 # Add config.h.in file
 configure_file(Aufgabe2_config.h.in config.h)
