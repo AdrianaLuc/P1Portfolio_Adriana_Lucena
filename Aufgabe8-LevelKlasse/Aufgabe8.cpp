@@ -32,8 +32,17 @@ int main() {
     }
 
     levelOne.positionRandomly();
-    levelOne.setRandomVelocity();
     levelOne.setRandomDirection();
+    levelOne.setRandomSpeed();
+
+    /*std::vector<int> test;
+    for (int i = 0; i < 30; ++i) {
+        test.push_back(rand() % 3 - 1);
+    }
+
+    for (auto i : test) {
+        std::cout << i << std::endl;
+    }*/
 
 
     // Main game loop

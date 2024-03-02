@@ -18,35 +18,32 @@ void Game::Level::positionRandomly() {
     }
 }
 
-void Game::Level::setRandomVelocity() {
-    // TODO: disallow 0 velocity
+void Game::Level::setRandomSpeed() {
     for (auto asteroid: asteroids) {
-        asteroid->setVelocity({rand() % 6, rand() % 6});
-        if (asteroid->getVelocity().x == 0 && asteroid->getVelocity().y == 0) {
-            asteroid->setVelocity({1, 1});
-        }
-    }
-}
-
-void Game::Level::update() {
-    // das hier mit random Richtungsvektoren machen
-    for (auto asteroid: asteroids) {
-        asteroid->posX += asteroid->getVelocity().x;
-        asteroid->posY += asteroid->getVelocity().y;
-
-        if (asteroid->posX >= GetScreenWidth() - asteroid->texture.width || asteroid->posX <= 0) {
-            asteroid->modifyVelocity(-1, 0);
-        }
-        if (asteroid->posY >= GetScreenHeight() - asteroid->texture.height || asteroid->posY <= 0) {
-            asteroid->modifyVelocity(0, -1);
+        asteroid->setSpeed(rand() % 5);
+        if (asteroid->getSpeed() == 0) {
+            asteroid->setSpeed(2);
         }
     }
 }
 
 void Game::Level::updateTest() {
     for (auto asteroid: asteroids) {
-        asteroid->posX += asteroid->getDirection().x * asteroid->getVelocity().x;
-        asteroid->posY += asteroid->getDirection().y * asteroid->getVelocity().y;
+        asteroid->posX += asteroid->getDirection().x * asteroid->getSpeed();
+        asteroid->posY += asteroid->getDirection().y * asteroid->getSpeed();
+
+        if (asteroid->posX >= GetScreenWidth() - asteroid->texture.width) {
+            asteroid->setDirection({-1, rand() % 3 - 1});
+        }
+        if (asteroid->posX <= 0) {
+            asteroid->setDirection({1, rand() % 3 - 1});
+        }
+        if (asteroid->posY >= GetScreenHeight() - asteroid->texture.height) {
+            asteroid->setDirection({rand() % 3 - 1, -1});
+        }
+        if (asteroid->posY <= 0) {
+            asteroid->setDirection({rand() % 3 - 1, 1});
+        }
     }
 }
 
@@ -54,14 +51,10 @@ void Game::Level::setRandomDirection() {
     for (auto asteroid: asteroids) {
         // generates numbers between -1 and 1
         asteroid->setDirection({rand() % 3 - 1, rand() % 3 - 1});
+        // disallow 0 direction
         if (asteroid->getDirection().x == 0 || asteroid->getDirection().y == 0) {
             asteroid->setDirection({1, 1});
         }
-        if (asteroid->posX >= GetScreenWidth() - asteroid->texture.width || asteroid->posX <= 0) {
-            asteroid->modifyVelocity(-1, 0);
-        }
-        if (asteroid->posY >= GetScreenHeight() - asteroid->texture.height || asteroid->posY <= 0) {
-            asteroid->modifyVelocity(0, -1);
-        }
     }
 }
+

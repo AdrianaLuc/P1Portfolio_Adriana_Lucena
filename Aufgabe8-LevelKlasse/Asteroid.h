@@ -13,17 +13,16 @@ namespace Game {
         Asteroid(int _posX, int _posY, Texture2D _texture) : BaseSprite(_posX, _posY, _texture) {};
         Asteroid(std::string _dateiname) : BaseSprite(_dateiname) {};
 
-        Vector2Int getVelocity();
         Vector2Int getDirection();
-        void setVelocity(Vector2Int _velocity);
+        int getSpeed();
         void setDirection(Vector2Int _direction);
-        void modifyVelocity(float _modifierX, float _modifierY);
+        void setSpeed(int _speed);
 
     private:
         Asteroid() = default;
 
         // rand Funktion arbeitet nur mit ints.
-        Vector2Int velocity = {0, 0};
+        int speed = 0;
         Vector2Int direction = {0, 0};
     };
 }

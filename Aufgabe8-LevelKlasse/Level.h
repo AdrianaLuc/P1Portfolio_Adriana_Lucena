@@ -19,8 +19,7 @@ namespace Game{
         std::vector<std::shared_ptr<Game::Asteroid>> asteroids;
         void drawSprites();
         void positionRandomly();
-        void setRandomVelocity();
-        void update();
+        void setRandomSpeed();
         void updateTest();
         void setRandomDirection();
     };
