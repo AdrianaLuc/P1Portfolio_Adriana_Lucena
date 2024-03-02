@@ -8,7 +8,19 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(${PROJECT_NAME} Aufgabe4.cpp)
+add_executable(${PROJECT_NAME} Aufgabe4.cpp
+        Flower.cpp
+        Flower.h
+        Grass.cpp
+        Grass.h
+        mainFunctions.cpp
+        mainFunctions.h
+        Plant.cpp
+        Plant.h
+        Shrub.cpp
+        Shrub.h
+        Tree.cpp
+        Tree.h)
 
 # Add config.h.in file
 configure_file(Aufgabe4_config.h.in config.h)
