@@ -20,6 +20,7 @@ namespace Game {
     private:
         Asteroid() = default;
 
+        // rand Funktion arbeitet nur mit ints.
         Vector2Int velocity = {0, 0};
     };
 }
