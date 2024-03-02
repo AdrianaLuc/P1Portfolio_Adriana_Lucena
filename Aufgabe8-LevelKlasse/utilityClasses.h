@@ -3,7 +3,9 @@
 //
 
 #pragma once
+
 #include "raylib.h"
+#include "math.h"
 
 namespace Game {
     class Vector2Int {
@@ -12,3 +14,4 @@ namespace Game {
         int y;
     };
 }
+

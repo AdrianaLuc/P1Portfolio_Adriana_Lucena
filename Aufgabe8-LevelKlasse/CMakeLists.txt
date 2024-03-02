@@ -15,8 +15,11 @@ add_executable(${PROJECT_NAME} Aufgabe8.cpp
         Level.h
         Asteroid.cpp
         Asteroid.h
-        utilities.cpp
-        utilities.h)
+        utilityClasses.cpp
+        utilityClasses.h
+        utilitiyFunctions.cpp
+        utilitiyFunctions.h
+)
 
 # Add config.h.in file
 configure_file(Aufgabe8_config.h.in config.h)

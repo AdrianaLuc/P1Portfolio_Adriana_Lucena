@@ -4,7 +4,7 @@
 
 #pragma once
 #include "BaseSprite.h"
-#include "utilities.h"
+#include "utilityClasses.h"
 
 namespace Game {
 
@@ -14,7 +14,9 @@ namespace Game {
         Asteroid(std::string _dateiname) : BaseSprite(_dateiname) {};
 
         Vector2Int getVelocity();
+        Vector2Int getDirection();
         void setVelocity(Vector2Int _velocity);
+        void setDirection(Vector2Int _direction);
         void modifyVelocity(float _modifierX, float _modifierY);
 
     private:
@@ -22,6 +24,7 @@ namespace Game {
 
         // rand Funktion arbeitet nur mit ints.
         Vector2Int velocity = {0, 0};
+        Vector2Int direction = {0, 0};
     };
 }
 

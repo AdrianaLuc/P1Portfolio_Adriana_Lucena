@@ -33,13 +33,15 @@ int main() {
 
     levelOne.positionRandomly();
     levelOne.setRandomVelocity();
+    levelOne.setRandomDirection();
 
 
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
         // Updates that are made by frame are coded here
-        levelOne.update();
+        //levelOne.update();
+        levelOne.updateTest();
 
 
         BeginDrawing();

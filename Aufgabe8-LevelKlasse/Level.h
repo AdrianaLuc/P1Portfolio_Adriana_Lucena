@@ -9,6 +9,8 @@
 #include "BaseSprite.h"
 #include "vector"
 #include "Asteroid.h"
+#include "utilityClasses.h"
+#include "utilitiyFunctions.h"
 
 namespace Game{
     class Level {
@@ -19,6 +21,8 @@ namespace Game{
         void positionRandomly();
         void setRandomVelocity();
         void update();
+        void updateTest();
+        void setRandomDirection();
     };
 }
 

@@ -21,7 +21,7 @@ void Game::Level::positionRandomly() {
 void Game::Level::setRandomVelocity() {
     // TODO: disallow 0 velocity
     for (auto asteroid: asteroids) {
-        asteroid->setVelocity({rand() % 7, rand() % 7});
+        asteroid->setVelocity({rand() % 6, rand() % 6});
         if (asteroid->getVelocity().x == 0 && asteroid->getVelocity().y == 0) {
             asteroid->setVelocity({1, 1});
         }
@@ -43,4 +43,25 @@ void Game::Level::update() {
     }
 }
 
+void Game::Level::updateTest() {
+    for (auto asteroid: asteroids) {
+        asteroid->posX += asteroid->getDirection().x * asteroid->getVelocity().x;
+        asteroid->posY += asteroid->getDirection().y * asteroid->getVelocity().y;
+    }
+}
 
+void Game::Level::setRandomDirection() {
+    for (auto asteroid: asteroids) {
+        // generates numbers between -1 and 1
+        asteroid->setDirection({rand() % 3 - 1, rand() % 3 - 1});
+        if (asteroid->getDirection().x == 0 || asteroid->getDirection().y == 0) {
+            asteroid->setDirection({1, 1});
+        }
+        if (asteroid->posX >= GetScreenWidth() - asteroid->texture.width || asteroid->posX <= 0) {
+            asteroid->modifyVelocity(-1, 0);
+        }
+        if (asteroid->posY >= GetScreenHeight() - asteroid->texture.height || asteroid->posY <= 0) {
+            asteroid->modifyVelocity(0, -1);
+        }
+    }
+}
