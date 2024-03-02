@@ -3,7 +3,7 @@
 #include "config.h"
 #include "iostream"
 #include "raymath.h"
-#include "Sprite.h"
+#include "BaseSprite.h"
 #include "Level.h"
 
 // TODO: Raylib Aufgaben noch voneinander trennen?
@@ -28,18 +28,18 @@ int main() {
     Game::Level levelOne;
     for (int i = 0; i < 20; ++i) {
         // TODO: make_shared und alle anderen Methoden nochmal anschauen
-        levelOne.sprites.push_back(std::make_shared<Game::Sprite>("testimage.png"));
+        levelOne.asteroids.push_back(std::make_shared<Game::Asteroid>("testimage.png"));
     }
 
     levelOne.positionRandomly();
-    Vector2 velocity = {2, 2};
+    levelOne.setRandomVelocity();
 
 
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
         // Updates that are made by frame are coded here
-        levelOne.update(velocity);
+        levelOne.update();
 
 
         BeginDrawing();

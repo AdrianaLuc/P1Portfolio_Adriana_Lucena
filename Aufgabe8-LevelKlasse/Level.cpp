@@ -5,30 +5,40 @@
 #include "Level.h"
 
 void Game::Level::drawSprites() {
-    // "for every sprite in the vector sprites"
-    for (auto sprite: sprites) {
-        DrawTexture(sprite->texture, sprite->posX, sprite->posY, WHITE);
+    // "for every asteroid in the vector asteroids"
+    for (auto asteroid: asteroids) {
+        DrawTexture(asteroid->texture, asteroid->posX, asteroid->posY, WHITE);
     }
 }
 
-// TODO: fix this
 void Game::Level::positionRandomly() {
-    for (auto sprite: sprites) {
-        sprite->posX = rand() % (GetScreenWidth() - sprite->texture.width);
-        sprite->posY = rand() % (GetScreenHeight() - sprite->texture.width);
+    for (auto asteroid: asteroids) {
+        asteroid->posX = rand() % (GetScreenWidth() - asteroid->texture.width);
+        asteroid->posY = rand() % (GetScreenHeight() - asteroid->texture.width);
     }
 }
 
-void Game::Level::update(Vector2 _velocity) {
-    for (auto sprite: sprites) {
-        sprite->posX += _velocity.x;
-        sprite->posY += _velocity.y;
-        /*if (sprite->posX == GetScreenWidth() - sprite->texture.width || sprite->posX == 0 + sprite->texture.width) {
-            _velocity.x *= -1;
+void Game::Level::setRandomVelocity() {
+    // TODO: disallow 0 velocity
+    for (auto asteroid: asteroids) {
+        asteroid->setVelocity({rand() % 7, rand() % 7});
+        if (asteroid->getVelocity().x == 0 || asteroid->getVelocity().y == 0) {
+            asteroid->setVelocity({1, 1});
         }
-        if (sprite->posY == GetScreenHeight() - sprite->texture.height || sprite->posY == 0 + sprite->texture.height) {
-            _velocity.y *= -1;
-        }*/
+    }
+}
+
+void Game::Level::update() {
+    for (auto asteroid: asteroids) {
+        asteroid->posX += asteroid->getVelocity().x;
+        asteroid->posY += asteroid->getVelocity().y;
+
+        if (asteroid->posX >= GetScreenWidth() || asteroid->posX <= 0) {
+            asteroid->modifyVelocity(-1, 0);
+        }
+        if (asteroid->posY >= GetScreenHeight() || asteroid->posY <= 0) {
+            asteroid->modifyVelocity(0, -1);
+        }
     }
 
 
@@ -57,3 +67,5 @@ void Game::Level::update(Vector2 _velocity) {
         }
     }*/
 }
+
+

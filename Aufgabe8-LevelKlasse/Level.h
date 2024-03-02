@@ -6,17 +6,19 @@
 
 #include <memory>
 #include "iostream"
-#include "Sprite.h"
+#include "BaseSprite.h"
 #include "vector"
+#include "Asteroid.h"
 
 namespace Game{
     class Level {
     public:
         // Vektor aus sprite Pointern
-        std::vector<std::shared_ptr<Game::Sprite>> sprites;
+        std::vector<std::shared_ptr<Game::Asteroid>> asteroids;
         void drawSprites();
         void positionRandomly();
-        void update(Vector2 _velocity);
+        void setRandomVelocity();
+        void update();
     };
 }
 
