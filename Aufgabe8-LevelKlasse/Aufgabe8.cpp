@@ -1,11 +1,17 @@
-//
-// Created by adria on 02.03.2024.
-//
 #include <cstdlib>
-
 #include "raylib.h"
-
 #include "config.h"
+#include "iostream"
+#include "raymath.h"
+#include "Sprite.h"
+#include "Level.h"
+
+// TODO: Raylib Aufgaben noch voneinander trennen?
+// TODO: alles in englische begriffe umschreiben
+// TODO: rand funktion nochmal anschauen und verstehen was genau da passiert
+// TODO: Vektoren auch nochmal anschauen
+// TODO: verschiedene for Schleifen anschauen und ausprobieren
+// TODO: shared pointers?
 
 int main() {
     // Raylib initialization
@@ -18,32 +24,38 @@ int main() {
 #endif
 
     // Your own initialization code here
-    // ...
-    // ...
-    Texture2D myTexture = LoadTexture("assets/graphics/testimage.png");
+    srand (time(nullptr));
+    Game::Level levelOne;
+    for (int i = 0; i < 20; ++i) {
+        // TODO: make_shared und alle anderen Methoden nochmal anschauen
+        levelOne.sprites.push_back(std::make_shared<Game::Sprite>("testimage.png"));
+    }
+
+    levelOne.positionRandomly();
+    Vector2 velocity = {2, 2};
+
 
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
         // Updates that are made by frame are coded here
-        // ...
-        // ...
+        levelOne.update(velocity);
+
 
         BeginDrawing();
         // You can draw on the screen between BeginDrawing() and EndDrawing()
-        // ...
-        // ...
         ClearBackground(WHITE);
-        DrawText("Hello, world!", 10, 10, 30, LIGHTGRAY);
-        DrawTexture(myTexture, 10, 100, WHITE);
+        levelOne.drawSprites();
+
+
+
 
         EndDrawing();
     } // Main game loop end
 
     // De-initialization here
     // ...
-    // ...
-    UnloadTexture(myTexture);
+
 
     // Close window and OpenGL context
     CloseWindow();

@@ -8,7 +8,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(${PROJECT_NAME} Aufgabe8.cpp)
+add_executable(${PROJECT_NAME} Aufgabe8.cpp
+        Sprite.cpp
+        Sprite.h
+        Level.cpp
+        Level.h)
 
 # Add config.h.in file
 configure_file(Aufgabe8_config.h.in config.h)
