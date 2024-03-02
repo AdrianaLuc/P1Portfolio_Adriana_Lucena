@@ -8,17 +8,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(${PROJECT_NAME} Aufgabe2.cpp
-        ../Aufgabe3-Wuerfelspiel/Aufgabe3.cpp
-        ../Aufgabe4-Pflanzenklassen/Aufgabe4.cpp
-        ../Aufgabe5-CustomDynamicArray/Aufgabe5.cpp
-        ../Aufgabe6-Auto/Aufgabe6.cpp
-        ../Aufgabe7-RaylibSpriteKlasse/Aufgabe7.cpp
-        ../Aufgabe8-LevelKlasse/Aufgabe8.cpp
-        Sprite.cpp
-        Sprite.h
-        ../Aufgabe3-Wuerfelspiel/Functions.cpp
-        ../Aufgabe3-Wuerfelspiel/Functions.h)
+add_executable(${PROJECT_NAME} Aufgabe2.cpp)
 
 # Add config.h.in file
 configure_file(Aufgabe2_config.h.in config.h)
