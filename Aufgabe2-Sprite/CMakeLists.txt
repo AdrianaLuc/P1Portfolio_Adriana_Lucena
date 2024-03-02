@@ -14,7 +14,9 @@ add_executable(${PROJECT_NAME} Aufgabe2.cpp
         ../Aufgabe5-CustomDynamicArray/Aufgabe5.cpp
         ../Aufgabe6-Auto/Aufgabe6.cpp
         ../Aufgabe7-RaylibSpriteKlasse/Aufgabe7.cpp
-        ../Aufgabe8-LevelKlasse/Aufgabe8.cpp)
+        ../Aufgabe8-LevelKlasse/Aufgabe8.cpp
+        Sprite.cpp
+        Sprite.h)
 
 # Add config.h.in file
 configure_file(Aufgabe2_config.h.in config.h)
