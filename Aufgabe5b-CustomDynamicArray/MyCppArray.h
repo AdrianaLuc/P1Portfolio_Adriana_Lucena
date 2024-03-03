@@ -3,11 +3,15 @@
 //
 
 #pragma once
+#include <memory>
 #include "iostream"
 
 class MyCppArray {
 public:
-    int array[100];
+    MyCppArray(int _inputSize);
+
+    std::shared_ptr<int> array;
+    int size = 0;
 
     int numberOfElements();
     int smallestNumber();
