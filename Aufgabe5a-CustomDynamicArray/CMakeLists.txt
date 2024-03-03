@@ -1,3 +1,3 @@
-add_executable(Aufgabe5 Aufgabe5.cpp
+add_executable(Aufgabe5a Aufgabe5a.cpp
         MyCppArray.cpp
         MyCppArray.h)
