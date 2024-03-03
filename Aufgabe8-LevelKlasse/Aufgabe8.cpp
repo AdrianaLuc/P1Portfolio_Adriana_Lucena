@@ -35,15 +35,6 @@ int main() {
     levelOne.setRandomDirection();
     levelOne.setRandomSpeed();
 
-    /*std::vector<int> test;
-    for (int i = 0; i < 30; ++i) {
-        test.push_back(rand() % 3 - 1);
-    }
-
-    for (auto i : test) {
-        std::cout << i << std::endl;
-    }*/
-
 
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
@@ -57,6 +48,9 @@ int main() {
         // You can draw on the screen between BeginDrawing() and EndDrawing()
         ClearBackground(WHITE);
         levelOne.drawSprites();
+        for (auto asteroid: levelOne.asteroids) {
+            asteroid->drawHitbox();
+        }
 
 
         EndDrawing();

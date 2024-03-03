@@ -44,6 +44,8 @@ void Game::Level::updateTest() {
         if (asteroid->posY <= 0) {
             asteroid->setDirection({rand() % 3 - 1, 1});
         }
+
+        asteroid->updateHitboxPosition();
     }
 }
 
@@ -51,6 +53,10 @@ void Game::Level::setRandomDirection() {
     for (auto asteroid: asteroids) {
         // generates numbers between -1 and 1
         asteroid->setDirection({rand() % 3 - 1, rand() % 3 - 1});
+
+        // TODO: warum funktioniert das nicht? :(
+        //normalizeVector(asteroid->getDirection());
+
         // disallow 0 direction
         if (asteroid->getDirection().x == 0 || asteroid->getDirection().y == 0) {
             asteroid->setDirection({1, 1});
