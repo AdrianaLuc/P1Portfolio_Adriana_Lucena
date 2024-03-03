@@ -8,15 +8,17 @@
 #include "iostream"
 #include "BaseSprite.h"
 #include "vector"
-#include "Asteroid.h"
+#include "Cookie.h"
 #include "utilityClasses.h"
 #include "utilitiyFunctions.h"
+#include "CookieCrumb.h"
 
 namespace Game{
     class Level {
     public:
         // Vektor aus sprite Pointern
-        std::vector<std::shared_ptr<Game::Asteroid>> asteroids;
+        std::vector<std::shared_ptr<Game::Cookie>> cookies;
+        std::vector<std::shared_ptr<Game::CookieCrumb>> cookieCrumbs;
         void drawSprites();
         void positionRandomly();
         void setRandomSpeed();

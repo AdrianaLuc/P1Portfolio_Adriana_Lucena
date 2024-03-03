@@ -9,10 +9,10 @@
 
 namespace Game {
 
-    class Asteroid : public Game::BaseSprite {
+    class Cookie : public Game::BaseSprite {
     public:
-        Asteroid(int _posX, int _posY, Texture2D _texture) : BaseSprite(_posX, _posY, _texture) {};
-        Asteroid(std::string _dateiname);
+        Cookie(int _posX, int _posY, Texture2D _texture) : BaseSprite(_posX, _posY, _texture) {};
+        Cookie(std::string _dateiname);
 
         Vector2Int getDirection();
         int getSpeed();
@@ -27,7 +27,7 @@ namespace Game {
         void updateHitboxPosition();
 
     private:
-        Asteroid() = default;
+        Cookie() = default;
 
         // rand Funktion arbeitet nur mit ints.
         int speed = 0;

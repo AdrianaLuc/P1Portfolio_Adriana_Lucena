@@ -5,76 +5,78 @@
 #include "Level.h"
 
 void Game::Level::drawSprites() {
-    // "for every asteroid in the vector asteroids"
-    for (auto asteroid: asteroids) {
-        DrawTexture(asteroid->texture, asteroid->posX, asteroid->posY, WHITE);
+    // "for every asteroid in the vector cookies"
+    for (auto cookie: cookies) {
+        DrawTexture(cookie->texture, cookie->posX, cookie->posY, WHITE);
     }
 }
 
 void Game::Level::positionRandomly() {
-    for (auto asteroid: asteroids) {
-        asteroid->posX = rand() % (GetScreenWidth() - asteroid->texture.width);
-        asteroid->posY = rand() % (GetScreenHeight() - asteroid->texture.width);
+    for (auto cookie: cookies) {
+        cookie->posX = rand() % (GetScreenWidth() - cookie->texture.width);
+        cookie->posY = rand() % (GetScreenHeight() - cookie->texture.width);
     }
 }
 
 void Game::Level::setRandomSpeed() {
-    for (auto asteroid: asteroids) {
-        asteroid->setSpeed(rand() % 5);
-        if (asteroid->getSpeed() == 0) {
-            asteroid->setSpeed(2);
+    for (auto cookie: cookies) {
+        cookie->setSpeed(rand() % 5);
+        if (cookie->getSpeed() == 0) {
+            cookie->setSpeed(2);
         }
     }
 }
 
 void Game::Level::updateTest() {
-    for (auto asteroid: asteroids) {
-        asteroid->posX += asteroid->getDirection().x * asteroid->getSpeed();
-        asteroid->posY += asteroid->getDirection().y * asteroid->getSpeed();
+    for (auto cookie: cookies) {
+        cookie->posX += cookie->getDirection().x * cookie->getSpeed();
+        cookie->posY += cookie->getDirection().y * cookie->getSpeed();
 
-        if (asteroid->posX >= GetScreenWidth() - asteroid->texture.width) {
-            asteroid->setDirection({-1, rand() % 3 - 1});
+        if (cookie->posX >= GetScreenWidth() - cookie->texture.width) {
+            cookie->setDirection({-1, rand() % 3 - 1});
         }
-        if (asteroid->posX <= 0) {
-            asteroid->setDirection({1, rand() % 3 - 1});
+        if (cookie->posX <= 0) {
+            cookie->setDirection({1, rand() % 3 - 1});
         }
-        if (asteroid->posY >= GetScreenHeight() - asteroid->texture.height) {
-            asteroid->setDirection({rand() % 3 - 1, -1});
+        if (cookie->posY >= GetScreenHeight() - cookie->texture.height) {
+            cookie->setDirection({rand() % 3 - 1, -1});
         }
-        if (asteroid->posY <= 0) {
-            asteroid->setDirection({rand() % 3 - 1, 1});
+        if (cookie->posY <= 0) {
+            cookie->setDirection({rand() % 3 - 1, 1});
         }
 
-        asteroid->updateHitboxPosition();
+        cookie->updateHitboxPosition();
     }
 }
 
 void Game::Level::setRandomDirection() {
-    for (auto asteroid: asteroids) {
+    for (auto cookie: cookies) {
         // generates numbers between -1 and 1
-        asteroid->setDirection({rand() % 3 - 1, rand() % 3 - 1});
+        cookie->setDirection({rand() % 3 - 1, rand() % 3 - 1});
 
         // TODO: warum funktioniert das nicht? :(
-        //normalizeVector(asteroid->getDirection());
+        //normalizeVector(cookie->getDirection());
 
         // disallow 0 direction
-        if (asteroid->getDirection().x == 0 || asteroid->getDirection().y == 0) {
-            asteroid->setDirection({1, 1});
+        if (cookie->getDirection().x == 0 || cookie->getDirection().y == 0) {
+            cookie->setDirection({1, 1});
         }
     }
 }
 
 void Game::Level::checkClickAsteroid() {
-    Vector2 mousePiont = GetMousePosition();
+    Vector2 mousePoint = GetMousePosition();
+    // float conversion stuff
     float hitboxCenterX;
     float hitboxCenterY;
-    for (auto asteroid: asteroids) {
-        hitboxCenterX = asteroid->getHitbox().centerX;
-        hitboxCenterY = asteroid->getHitbox().centerY;
-        if (CheckCollisionPointCircle(mousePiont, {hitboxCenterX, hitboxCenterY}, asteroid->getHitbox().radius)){
+    for (auto cookie: cookies) {
+        hitboxCenterX = cookie->getHitbox().centerX;
+        hitboxCenterY = cookie->getHitbox().centerY;
+        if (CheckCollisionPointCircle(mousePoint, {hitboxCenterX, hitboxCenterY}, cookie->getHitbox().radius)){
             if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-                asteroid->posX = 0;
-                asteroid->posY = 0;
+                cookie->posX = 0;
+                cookie->posY = 0;
+                //auto it = std::find(cookies.begin(), cookies.end(), cookie);
             }
         }
     }

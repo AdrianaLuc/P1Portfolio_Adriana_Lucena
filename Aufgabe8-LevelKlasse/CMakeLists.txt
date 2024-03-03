@@ -13,14 +13,14 @@ add_executable(${PROJECT_NAME} Aufgabe8.cpp
         BaseSprite.h
         Level.cpp
         Level.h
-        Asteroid.cpp
-        Asteroid.h
+        Cookie.cpp
+        Cookie.h
         utilityClasses.cpp
         utilityClasses.h
         utilitiyFunctions.cpp
         utilitiyFunctions.h
-        CookieCrumbs.cpp
-        CookieCrumbs.h
+        CookieCrumb.cpp
+        CookieCrumb.h
 )
 
 # Add config.h.in file
