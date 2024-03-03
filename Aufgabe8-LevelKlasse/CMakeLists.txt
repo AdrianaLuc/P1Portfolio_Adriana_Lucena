@@ -19,6 +19,8 @@ add_executable(${PROJECT_NAME} Aufgabe8.cpp
         utilityClasses.h
         utilitiyFunctions.cpp
         utilitiyFunctions.h
+        CookieCrumbs.cpp
+        CookieCrumbs.h
 )
 
 # Add config.h.in file

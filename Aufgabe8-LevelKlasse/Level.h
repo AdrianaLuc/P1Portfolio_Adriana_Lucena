@@ -22,6 +22,7 @@ namespace Game{
         void setRandomSpeed();
         void updateTest();
         void setRandomDirection();
+        void checkClickAsteroid();
     };
 }
 

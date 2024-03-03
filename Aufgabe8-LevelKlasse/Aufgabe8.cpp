@@ -28,7 +28,7 @@ int main() {
     Game::Level levelOne;
     for (int i = 0; i < 20; ++i) {
         // TODO: make_shared und alle anderen Methoden nochmal anschauen
-        levelOne.asteroids.push_back(std::make_shared<Game::Asteroid>("testimage.png"));
+        levelOne.asteroids.push_back(std::make_shared<Game::Asteroid>("cookieNew.png"));
     }
 
     levelOne.positionRandomly();
@@ -42,15 +42,16 @@ int main() {
         // Updates that are made by frame are coded here
         //levelOne.update();
         levelOne.updateTest();
+        levelOne.checkClickAsteroid();
 
 
         BeginDrawing();
         // You can draw on the screen between BeginDrawing() and EndDrawing()
         ClearBackground(WHITE);
         levelOne.drawSprites();
-        for (auto asteroid: levelOne.asteroids) {
+        /*for (auto asteroid: levelOne.asteroids) {
             asteroid->drawHitbox();
-        }
+        }*/
 
 
         EndDrawing();

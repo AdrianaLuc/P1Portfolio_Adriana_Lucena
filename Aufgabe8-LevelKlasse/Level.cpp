@@ -64,3 +64,21 @@ void Game::Level::setRandomDirection() {
     }
 }
 
+void Game::Level::checkClickAsteroid() {
+    Vector2 mousePiont = GetMousePosition();
+    float hitboxCenterX;
+    float hitboxCenterY;
+    for (auto asteroid: asteroids) {
+        hitboxCenterX = asteroid->getHitbox().centerX;
+        hitboxCenterY = asteroid->getHitbox().centerY;
+        if (CheckCollisionPointCircle(mousePiont, {hitboxCenterX, hitboxCenterY}, asteroid->getHitbox().radius)){
+            if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+                asteroid->posX = 0;
+                asteroid->posY = 0;
+            }
+        }
+    }
+}
+
+
+
