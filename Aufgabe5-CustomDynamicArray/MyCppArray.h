@@ -7,13 +7,12 @@
 
 class MyCppArray {
 public:
-    int sizeOfArray();
+    int array[100];
+
+    int numberOfElements();
     int smallestNumber();
     int biggestNumber();
-
-private:
-    int arr[100];
-
+    int specificNumber(int _inputInt);
 };
 
 
