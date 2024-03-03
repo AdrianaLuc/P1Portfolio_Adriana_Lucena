@@ -57,11 +57,6 @@ int main() {
         // You can draw on the screen between BeginDrawing() and EndDrawing()
         ClearBackground(WHITE);
         levelOne.drawSprites();
-        for (auto astroid : levelOne.asteroids) {
-            astroid->drawHitbox();
-        }
-
-
 
 
         EndDrawing();
