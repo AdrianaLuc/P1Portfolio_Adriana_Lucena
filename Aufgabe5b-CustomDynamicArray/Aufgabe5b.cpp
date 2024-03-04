@@ -15,7 +15,7 @@ int main() {
     MyCppArray arr(100);
 
     for (int i = 0; i < arr.numberOfElements(); i++) {
-
+        arr.array[i] = rand() % 100;
     }
 
     /*arr.array[0] = 20;

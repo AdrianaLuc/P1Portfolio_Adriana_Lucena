@@ -22,7 +22,6 @@ namespace Sprites {
         int currentFrame = 0;
         int width;
         int height;
-        // lieber ein Vector?
         Frame frames[10];
         Frame* currentFramePointer = &frames[0];
         // anonymous enum

@@ -32,10 +32,11 @@ void gameRound(int& _pointsPlayer, int& _pointsComputer, int& _dieType){
 
 void gameStartInfo(){
     std::cout << "Welcome to the best dice game in the world! :)" << std::endl;
-    std::cout << "Before you roll a die against the computer, you need to enter the die type" << std::endl;
-    std::cout << "This can be either a D4, D6, D8, D10, D12 or D20" << std::endl;
-    std::cout << "Your points and the computer's points will be shown at the end" << std::endl;
-    std::cout << "To exit the game, enter 0 as the die type" << std::endl;
+    std::cout << "Before you roll a die against the computer, you need to enter the die type." << std::endl;
+    std::cout << "This can either be a D4, D6, D8, D10, D12 or D20." << std::endl;
+    std::cout << "Please only enter the number of the die (without the D)." << std::endl;
+    std::cout << "Your points and the computer's points will be shown at the end." << std::endl;
+    std::cout << "To exit the game, enter 0 as the die type." << std::endl;
     std::cout << "Enjoy! :)" << std::endl;
 }
 
@@ -43,10 +44,18 @@ int changeDie(){
     int dieType;
     std::cout << "Enter die type or 0 to exit" << std::endl;
     std::cin >> dieType;
-    return dieType;
+    // TODO: kann man das hier irgendwie kürzen?
+    if (dieType == 4 || dieType == 6 || dieType == 8 || dieType == 10 || dieType == 12 || dieType == 20){
+        return dieType;
+    } else {
+        // TODO: gehört throw hierher? -> erklären können!
+        //throw std::invalid_argument("Die type must be 4, 6, 8, 10, 12 or 20");
+        std::cout << "Invalid die type, please try again" << std::endl;
+        return 0;
+    }
 }
 
-int enumToInt(dieType _dieType){
+/*int enumToInt(dieType _dieType){
     switch (_dieType) {
         case d4:
             return 4;
@@ -63,4 +72,4 @@ int enumToInt(dieType _dieType){
         default:
             return 0;
     }
-}
+}*/
