@@ -9,6 +9,11 @@ void Game::Level::drawSprites() {
     for (auto cookie: cookies) {
         DrawTexture(cookie->texture, cookie->posX, cookie->posY, WHITE);
     }
+    for (auto cookie: cookies) {
+        for (auto crumb: cookie->cookieCrumbs) {
+            //DrawTexture(crumb->texture, crumb->posX, crumb->posY, WHITE);
+        }
+    }
 }
 
 void Game::Level::positionRandomly() {
@@ -76,7 +81,7 @@ void Game::Level::checkClickAsteroid() {
             if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
                 cookie->posX = 0;
                 cookie->posY = 0;
-                //auto it = std::find(cookies.begin(), cookies.end(), cookie);
+                cookie->spawnCookieCrumbs();
             }
         }
     }

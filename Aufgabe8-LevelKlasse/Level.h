@@ -18,7 +18,6 @@ namespace Game{
     public:
         // Vektor aus sprite Pointern
         std::vector<std::shared_ptr<Game::Cookie>> cookies;
-        std::vector<std::shared_ptr<Game::CookieCrumb>> cookieCrumbs;
         void drawSprites();
         void positionRandomly();
         void setRandomSpeed();

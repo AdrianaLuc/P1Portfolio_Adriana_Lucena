@@ -9,7 +9,11 @@
 namespace Game {
     class CookieCrumb : Game::BaseSprite {
     public:
-        CookieCrumb(std::string _dateiname) : BaseSprite(_dateiname) {};
+        CookieCrumb(std::string _dateiname, int _posX, int _posY) : BaseSprite(_dateiname) {
+            this->posX = _posX;
+            this->posY = _posY;
+        };
+        void draw();
 
     private:
         CookieCrumb() = default;

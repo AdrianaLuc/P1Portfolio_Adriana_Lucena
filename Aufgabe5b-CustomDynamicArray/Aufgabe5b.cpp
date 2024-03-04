@@ -14,24 +14,34 @@ int main() {
 
     MyCppArray arr(100);
 
-    for (int i = 0; i < arr.numberOfElements(); i++) {
-        arr.array[i] = rand() % 100;
+    bool quit = false;
+
+    while (!quit) {
+
+        for (int i = 0; i < arr.numberOfElements(); i++) {
+            arr.p_array[i] = rand() % 100;
+        }
+
+        std::cout << "Number of elements: " << arr.numberOfElements() << std::endl;
+        std::cout << "Smallest number: " << arr.smallestNumber() << std::endl;
+        std::cout << "Biggest number: " << arr.biggestNumber() << std::endl;
+
+        int inputInt;
+        std::cout << "Enter a number to get its index. If the output is -1, the number is not in the array."
+                  << std::endl;
+        std::cin >> inputInt;
+        std::cout << "Index: " << arr.specificNumber(inputInt) << std::endl;
+
+        std::cout << "Current size: " << arr.numberOfElements() << std::endl;
+        std::cout << "Enter new size:" << std::endl;
+        int newSize;
+        std::cin >> newSize;
+        arr.resize(newSize);
+        std::cout << "New size: " << arr.numberOfElements() << std::endl;
+
+        std::cout << "Quit? yes = 1; no = 0" << std::endl;
+        std::cin >> quit;
     }
-
-    /*arr.array[0] = 20;
-    arr.array[1] = 5;
-    arr.array[2] = 76;
-    arr.array[3] = 1029;
-    arr.array[4] = 32;*/
-
-    std::cout << "Number of elements: " << arr.numberOfElements() << std::endl;
-    std::cout << "Smallest number: " << arr.smallestNumber() << std::endl;
-    std::cout << "Biggest number: " << arr.biggestNumber() << std::endl;
-
-    int inputInt;
-    std::cout << "Enter a number to get its index. If the output is -1, the number is not in the array." << std::endl;
-    std::cin >> inputInt;
-    std::cout << "Index: " << arr.specificNumber(inputInt) << std::endl;
 
     return 0;
 }

@@ -50,9 +50,10 @@ int main() {
         // You can draw on the screen between BeginDrawing() and EndDrawing()
         ClearBackground(WHITE);
         levelOne.drawSprites();
-        /*for (auto asteroid: levelOne.cookies) {
-            asteroid->drawHitbox();
+        /*for (auto cookie: levelOne.cookies) {
+            cookie->drawHitbox();
         }*/
+
 
 
         EndDrawing();

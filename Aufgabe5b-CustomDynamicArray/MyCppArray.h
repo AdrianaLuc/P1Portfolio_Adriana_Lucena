@@ -9,14 +9,16 @@
 class MyCppArray {
 public:
     MyCppArray(int _inputSize);
+    ~MyCppArray();
 
-    std::shared_ptr<int> array;
+    int* p_array;
     int size = 0;
 
     int numberOfElements();
     int smallestNumber();
     int biggestNumber();
     int specificNumber(int _inputInt);
+    void resize(int _inputSize);
 };
 
 

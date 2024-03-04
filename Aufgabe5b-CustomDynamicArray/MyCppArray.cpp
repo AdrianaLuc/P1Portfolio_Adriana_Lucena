@@ -6,12 +6,15 @@
 
 // andere Varianten auf dem Heap zu allokieren nochmal anschauen
 MyCppArray::MyCppArray(int _inputSize) : size(_inputSize) {
-    //array = std::shared_ptr<int>(new int[_inputSize]);
     if (_inputSize >= 0) {
-        array = std::make_shared<int>(_inputSize);
+        p_array = new int[_inputSize];
     } else {
         throw std::invalid_argument("Invalid size");
     }
+}
+
+MyCppArray::~MyCppArray() {
+    delete[] p_array;
 }
 
 int MyCppArray::numberOfElements() {
@@ -19,20 +22,20 @@ int MyCppArray::numberOfElements() {
 }
 
 int MyCppArray::smallestNumber() {
-    int smallest = array.get()[0];
+    int smallest = p_array[0];
     for (int i = 0; i < numberOfElements(); i++) {
-        if (array.get()[i] < smallest) {
-            smallest = array.get()[i];
+        if (p_array[i] < smallest) {
+            smallest = p_array[i];
         }
     }
     return smallest;
 }
 
 int MyCppArray::biggestNumber() {
-    int biggest = array.get()[0];
+    int biggest = p_array[0];
     for (int i = 0; i < numberOfElements(); i++) {
-        if (array.get()[i] < biggest) {
-            biggest = array.get()[i];
+        if (p_array[i] > biggest) {
+            biggest = p_array[i];
         }
     }
     return biggest;
@@ -41,12 +44,19 @@ int MyCppArray::biggestNumber() {
 // Problem: bei Doppelung einer Nummer wird nur der Index der ersten Nummer im Array angegeben
 int MyCppArray::specificNumber(int _inputInt) {
     for (int i = 0; i < numberOfElements(); i++) {
-        if (array.get()[i] == _inputInt) {
+        if (p_array[i] == _inputInt) {
             return i;
         }
     }
     return -1;
 }
+
+void MyCppArray::resize(int _inputSize) {
+    delete[] p_array;
+    size = _inputSize;
+    p_array = new int[_inputSize];
+}
+
 
 
 

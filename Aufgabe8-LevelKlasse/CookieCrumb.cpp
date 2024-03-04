@@ -3,3 +3,7 @@
 //
 
 #include "CookieCrumb.h"
+
+void Game::CookieCrumb::draw() {
+    DrawTexture(this->texture, this->posX, this-> posY, WHITE);
+}

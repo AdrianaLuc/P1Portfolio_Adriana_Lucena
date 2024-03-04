@@ -3,9 +3,13 @@
 //
 
 #pragma once
+
+#include <memory>
 #include "BaseSprite.h"
 #include "utilityClasses.h"
 #include "raylib.h"
+#include "CookieCrumb.h"
+#include "vector"
 
 namespace Game {
 
@@ -25,9 +29,13 @@ namespace Game {
         void drawHitbox();
         void init();
         void updateHitboxPosition();
+        void spawnCookieCrumbs();
+        std::vector<std::shared_ptr<Game::CookieCrumb>> cookieCrumbs;
 
     private:
         Cookie() = default;
+
+        int crumbCounter = 0;
 
         // rand Funktion arbeitet nur mit ints.
         int speed = 0;

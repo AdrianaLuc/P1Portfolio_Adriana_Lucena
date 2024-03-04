@@ -49,5 +49,11 @@ void Game::Cookie::updateHitboxPosition() {
     this->hitbox = { this->posX + this->texture.width / 2, this->posY + this->texture.height / 2, this->texture.width / 2 };
 }
 
+void Game::Cookie::spawnCookieCrumbs() {
+    for (int i = 0; i < 5; ++i) {
+        cookieCrumbs.push_back(std::make_shared<Game::CookieCrumb>("cookieNew.png", this->posX, this->posY));
+    }
+}
+
 
 
