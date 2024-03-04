@@ -5,7 +5,7 @@
 #include "Grass.h"
 
 float Plants::Grass::calculateAverageHeight(float timeInDays) {
-    this->averageHeight = timeInDays * this->growthRate;
+    this->averageHeight = this->seeds.seedDiameter + timeInDays * this->growthRate;
     if (this->averageHeight <= 1) {
         return this->averageHeight;
     } else {

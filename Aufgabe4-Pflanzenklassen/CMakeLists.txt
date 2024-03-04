@@ -20,7 +20,8 @@ add_executable(${PROJECT_NAME} Aufgabe4.cpp
         Shrub.cpp
         Shrub.h
         Tree.cpp
-        Tree.h)
+        Tree.h
+)
 
 # Add config.h.in file
 configure_file(Aufgabe4_config.h.in config.h)

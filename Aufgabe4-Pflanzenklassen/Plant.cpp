@@ -6,18 +6,18 @@
 
 // getter
 std::string Plants::Plant::getLeafColor() {
-    return this->leafColor;
+    return this->leafs.leafColor;
 }
 
 float Plants::Plant::getSeedDiameter() {
-    return this->seedDiameter;
+    return this->seeds.seedDiameter;
 }
 
 // setter
-void Plants::Plant::setLeafColor(std::string leafColor) {
-    this->leafColor = leafColor;
+void Plants::Plant::setLeafColor(std::string _leafColor) {
+    this->leafs.leafColor = _leafColor;
 }
 
-void Plants::Plant::setSeedDiameter(float seedDiameter) {
-    this->seedDiameter = seedDiameter;
+void Plants::Plant::setSeedDiameter(float _seedDiameter) {
+    this->seeds.seedDiameter = _seedDiameter;
 }

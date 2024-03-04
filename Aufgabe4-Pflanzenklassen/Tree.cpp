@@ -5,7 +5,7 @@
 #include "Tree.h"
 
 float Plants::Tree::calculateAverageHeight(float timeInDays) {
-    this->averageHeight = timeInDays * this->growthRate;
+    this->averageHeight = this->seeds.seedDiameter + timeInDays * this->growthRate;
     if (this->averageHeight <= 12) {
         return this->averageHeight;
     } else {
