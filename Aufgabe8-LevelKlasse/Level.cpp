@@ -11,7 +11,7 @@ void Game::Level::drawSprites() {
     }
     for (auto cookie: cookies) {
         for (auto crumb: cookie->cookieCrumbs) {
-            //DrawTexture(crumb->texture, crumb->posX, crumb->posY, WHITE);
+            crumb->draw(cookie->posX, cookie->posY);
         }
     }
 }

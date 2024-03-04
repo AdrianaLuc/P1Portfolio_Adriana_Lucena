@@ -4,6 +4,6 @@
 
 #include "CookieCrumb.h"
 
-void Game::CookieCrumb::draw() {
-    DrawTexture(this->texture, this->posX, this-> posY, WHITE);
+void Game::CookieCrumb::draw(int _posX, int _posY) {
+    DrawTexture(this->texture, _posX, _posY, WHITE);
 }

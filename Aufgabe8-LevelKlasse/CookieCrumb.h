@@ -13,7 +13,8 @@ namespace Game {
             this->posX = _posX;
             this->posY = _posY;
         };
-        void draw();
+
+        void draw(int _posX, int _posY);
 
     private:
         CookieCrumb() = default;
