@@ -7,7 +7,16 @@
 // TODO: wie funktionieren Autos????
 
 #include "iostream"
+#include "Ford.h"
 
 int main() {
+
+    Ford ford;
+    ford.accelerate(5);
+    ford.deaccelerate(10);
+    ford.brake();
+    ford.goLeft();
+    ford.goRight();
+
     return 0;
 }
