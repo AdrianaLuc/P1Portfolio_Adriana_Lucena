@@ -11,3 +11,7 @@ car::component::gearShift car::component::Gears::getCurrentGear() {
 void car::component::Gears::setGear(car::component::gearShift _gear) {
     this->currentGear = _gear;
 }
+
+std::string car::component::Gears::getName() {
+    return this->name;
+}

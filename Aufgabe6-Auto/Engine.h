@@ -17,7 +17,7 @@ namespace car::component {
         void startEngine();
         void stopEngine();
 
-    private:
+    protected:
         const std::string name;
         const float acceleration;
         bool engineOn = false;

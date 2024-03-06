@@ -23,6 +23,7 @@ namespace car::component {
         Gears(std::string _name) : name(_name){};
 
         gearShift getCurrentGear();
+        std::string getName();
         void setGear(gearShift _gear);
 
     protected:

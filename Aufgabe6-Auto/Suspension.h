@@ -9,13 +9,13 @@ namespace car::component {
 
     class Suspension {
     public:
-        Suspension(std::string _name, int _shockAbsorption) : name(_name), shockAbsorption(_shockAbsorption){};
+        Suspension(std::string _name, float _shockAbsorption) : name(_name), shockAbsorption(_shockAbsorption){};
 
         std::string getName();
         int getShockAbsorption();
 
     private:
         std::string name;
-        int shockAbsorption;
+        float shockAbsorption;
     };
 }
