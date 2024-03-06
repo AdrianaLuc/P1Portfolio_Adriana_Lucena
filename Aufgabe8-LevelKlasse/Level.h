@@ -24,6 +24,7 @@ namespace Game{
         void updateTest();
         void setRandomDirection();
         void checkClickAsteroid();
+        void preloadCookieCrumbs();
     };
 }
 

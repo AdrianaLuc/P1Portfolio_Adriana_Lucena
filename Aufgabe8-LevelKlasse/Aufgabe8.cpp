@@ -6,12 +6,10 @@
 #include "BaseSprite.h"
 #include "Level.h"
 
-// TODO: Raylib Aufgaben noch voneinander trennen?
 // TODO: alles in englische begriffe umschreiben
 // TODO: rand funktion nochmal anschauen und verstehen was genau da passiert
 // TODO: Vektoren auch nochmal anschauen
 // TODO: verschiedene for Schleifen anschauen und ausprobieren
-// TODO: shared pointers?
 
 int main() {
     // Raylib initialization
@@ -35,6 +33,7 @@ int main() {
     levelOne.positionRandomly();
     levelOne.setRandomDirection();
     levelOne.setRandomSpeed();
+    levelOne.preloadCookieCrumbTextures();
 
 
     // Main game loop
@@ -53,7 +52,6 @@ int main() {
         /*for (auto cookie: levelOne.cookies) {
             cookie->drawHitbox();
         }*/
-
 
 
         EndDrawing();

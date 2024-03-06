@@ -87,5 +87,17 @@ void Game::Level::checkClickAsteroid() {
     }
 }
 
+void Game::Level::preloadCookieCrumbs() {
+
+
+
+    for (auto cookie: cookies) {
+        for (auto crumb: cookie->cookieCrumbs) {
+            crumb->loadTexture("CookieCrumb.png");
+        }
+    }
+}
+
+
 
 

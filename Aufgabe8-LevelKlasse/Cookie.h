@@ -21,11 +21,15 @@ namespace Game {
         Vector2Int getDirection();
         int getSpeed();
         Circle getHitbox();
+        int getCrumbCounter();
+
         void setDirection(Vector2Int _direction);
         void setSpeed(int _speed);
         // überladen aus convenience Gründen.
         void setHitbox(Circle _hitbox);
         void setHitbox(int _centerX, int _centerY, int _radius);
+        void setCrumbCounter(int _crumbCounter);
+
         void drawHitbox();
         void init();
         void updateHitboxPosition();

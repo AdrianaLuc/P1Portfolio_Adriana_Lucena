@@ -4,7 +4,7 @@
 
 #include "Cookie.h"
 
-Game::Cookie::Cookie(std::string _dateiname) : BaseSprite(_dateiname) {
+Game::Cookie::Cookie(std::string _dateiname) : BaseSprite(_dateiname), crumbCounter(4) {
     // braucht man nicht unbedingt, da die pos in update hitbox schon gesetzt wird.
     init();
 }
@@ -50,9 +50,17 @@ void Game::Cookie::updateHitboxPosition() {
 }
 
 void Game::Cookie::spawnCookieCrumbs() {
-    for (int i = 0; i < 5; ++i) {
-        cookieCrumbs.push_back(std::make_shared<Game::CookieCrumb>("cookieNew.png", this->posX, this->posY));
+    for (int i = 0; i < this->crumbCounter; ++i) {
+        this->cookieCrumbs.push_back(std::make_shared<Game::CookieCrumb>());
     }
+}
+
+int Game::Cookie::getCrumbCounter() {
+    return this->crumbCounter;
+}
+
+void Game::Cookie::setCrumbCounter(int _crumbCounter) {
+    this->crumbCounter = _crumbCounter;
 }
 
 

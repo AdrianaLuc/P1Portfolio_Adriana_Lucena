@@ -3,21 +3,24 @@
 //
 
 #pragma once
-#include "BaseSprite.h"
 #include "raylib.h"
+#include "iostream"
 
 namespace Game {
-    class CookieCrumb : Game::BaseSprite {
+    class CookieCrumb {
     public:
-        CookieCrumb(std::string _dateiname, int _posX, int _posY) : BaseSprite(_dateiname) {
-            this->posX = _posX;
-            this->posY = _posY;
-        };
+        CookieCrumb() = default;
+
+        Texture2D texture;
+        int posX;
+        int posY;
 
         void draw(int _posX, int _posY);
+        void loadTexture(std::string _dateiname);
+        //static CookieCrumb& getInstance();
 
     private:
-        CookieCrumb() = default;
+
     };
 }
 
