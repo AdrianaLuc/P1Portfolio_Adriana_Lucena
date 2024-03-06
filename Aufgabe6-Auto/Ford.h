@@ -18,8 +18,8 @@ namespace car {
     public:
         Ford();
 
-        void accelerate(int _time) override;
-        void deaccelerate(int _time) override;
+        void accelerate(float _time) override;
+        void deaccelerate(float _time) override;
         void brake() override;
 
     };

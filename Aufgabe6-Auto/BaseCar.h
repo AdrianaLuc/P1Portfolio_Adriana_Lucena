@@ -25,8 +25,10 @@ namespace car {
         std::shared_ptr<car::component::Suspension> getSuspensions();
         std::shared_ptr<car::component::Wheel> getWheels();
 
-        virtual void accelerate(int _time) = 0;
-        virtual void deaccelerate(int _time) = 0;
+        std::string getName();
+
+        virtual void accelerate(float _time) = 0;
+        virtual void deaccelerate(float _time) = 0;
         virtual void brake() = 0;
         void goLeft();
         void goRight();
@@ -40,6 +42,7 @@ namespace car {
         std::shared_ptr<car::component::Suspension> p_suspensions;
         std::shared_ptr<car::component::Wheel> p_wheels;
 
-        int currentspeed = 0;
+        float currentspeed = 0;
+        std::string name;
     };
 }

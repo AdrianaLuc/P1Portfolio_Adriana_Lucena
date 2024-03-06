@@ -11,9 +11,11 @@ car::Ford::Ford() {
     this->p_gears = std::make_shared<car::component::GearsDragonV2>();
     this->p_suspensions = std::make_shared<car::component::SuspensionDragonV2>();
     this->p_wheels = std::make_shared<car::component::WheelDragonV2>();
+
+    this->name = "Ford";
 }
 
-void car::Ford::accelerate(int _time) {
+void car::Ford::accelerate(float _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
         std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
@@ -25,7 +27,7 @@ void car::Ford::accelerate(int _time) {
     }
 }
 
-void car::Ford::deaccelerate(int _time) {
+void car::Ford::deaccelerate(float _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
         std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;

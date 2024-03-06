@@ -43,7 +43,9 @@ add_executable(Aufgabe6 Aufgabe6.cpp
         Ford.cpp
         Ford.h
         BMW.cpp
-        BMW.h)
+        BMW.h
+        mainFunctions.cpp
+        mainFunctions.h)
 
 
 

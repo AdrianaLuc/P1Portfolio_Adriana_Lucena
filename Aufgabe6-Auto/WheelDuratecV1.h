@@ -9,7 +9,7 @@ namespace car::component {
 
     class WheelDuratecV1 : public car::component::Wheel {
     public:
-        WheelDuratecV1() : Wheel("Wheel DuratecV1", 2) {}
+        WheelDuratecV1() : Wheel("Wheel DuratecV1", 1.002) {}
 
     };
 }

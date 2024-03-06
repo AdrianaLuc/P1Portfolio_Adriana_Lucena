@@ -11,9 +11,11 @@ car::BMW::BMW() {
     this->p_gears = std::make_shared<car::component::GearsDuratecV1>();
     this->p_suspensions = std::make_shared<car::component::SuspensionDuratecV1>();
     this->p_wheels = std::make_shared<car::component::WheelDuratecV1>();
+
+    this->name = "BMW";
 }
 
-void car::BMW::accelerate(int _time) {
+void car::BMW::accelerate(float _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
         std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
@@ -25,7 +27,7 @@ void car::BMW::accelerate(int _time) {
     }
 }
 
-void car::BMW::deaccelerate(int _time) {
+void car::BMW::deaccelerate(float _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
         std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;

@@ -36,3 +36,7 @@ std::shared_ptr<car::component::Suspension> car::BaseCar::getSuspensions() {
 std::shared_ptr<car::component::Wheel> car::BaseCar::getWheels() {
     return this->p_wheels;
 }
+
+std::string car::BaseCar::getName() {
+    return this->name;
+}
