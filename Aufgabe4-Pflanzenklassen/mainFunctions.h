@@ -3,10 +3,10 @@
 //
 
 #pragma once
+#include <memory>
 #include "iostream"
 #include "Plant.h"
 
 void info();
-std::string askPlantName();
-void plantInfo(Plants::Plant* _plant);
-void getAverageHeight(Plants::Plant* _plant);
+void choosePlant(std::shared_ptr<Plants::Plant>& _p_plant);
+void getAverageHeight(std::shared_ptr<Plants::Plant>& _p_plant);

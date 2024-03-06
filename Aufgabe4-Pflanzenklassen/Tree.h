@@ -12,7 +12,7 @@ namespace Plants {
 
     class Tree : public Plant {
     public:
-        Tree(): Plant("green", 0.5, 0.005){};
+        Tree(): Plant("Tree", "green", 0.5, 0.005){};
         float calculateAverageHeight(float timeInDays) override;
     };
 }

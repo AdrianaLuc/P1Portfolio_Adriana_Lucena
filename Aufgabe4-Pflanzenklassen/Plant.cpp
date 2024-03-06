@@ -21,3 +21,7 @@ void Plants::Plant::setLeafColor(std::string _leafColor) {
 void Plants::Plant::setSeedDiameter(float _seedDiameter) {
     this->seeds.seedDiameter = _seedDiameter;
 }
+
+std::string Plants::Plant::getName() {
+    return this->name;
+}

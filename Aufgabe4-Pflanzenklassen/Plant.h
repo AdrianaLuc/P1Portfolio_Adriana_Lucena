@@ -29,6 +29,7 @@ namespace Plants {
         // getter
         std::string getLeafColor();
         float getSeedDiameter();
+        std::string getName();
 
         // setter
         void setLeafColor(std::string _leafColor);
@@ -37,17 +38,16 @@ namespace Plants {
         virtual float calculateAverageHeight(float timeInDays) = 0;
         //virtual float calculateRootLength();
     protected:
-        Plant(std::string _leafColor, float _seedDiameter, float _growthRate) : leafs(_leafColor), seeds(_seedDiameter), growthRate(_growthRate){};
+        Plant(std::string _name, std::string _leafColor, float _seedDiameter, float _growthRate) :name(_name), leafs(_leafColor), seeds(_seedDiameter), growthRate(_growthRate){};
         float averageHeight;
-        // Blätter, Wurzeln, Seed als eigene Klasse -> dann in Vektoren klatschen
-        // -> Vector<Leaf> Blätter, ...
+        std::string name;
+
         Root roots;
-        // TODO (vielleicht): Anzahl der Blätter steigt mit der Zeit (und der Höhe der Pflanze)?
+        // TODO (Idee): (vielleicht): Anzahl der Blätter steigt mit der Zeit (und der Höhe der Pflanze)?
         Leaf leafs;
         Seed seeds;
         float growthRate;
     };
-
 }
 
 

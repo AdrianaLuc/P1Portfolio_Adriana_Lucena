@@ -8,7 +8,7 @@
 namespace Plants {
     class Flower : public Plant {
     public:
-        Flower(): Plant("white", 0.1, 0.005){};
+        Flower(): Plant("Flower", "white", 0.1, 0.005){};
         float calculateAverageHeight(float timeInDays) override;
     };
 }
