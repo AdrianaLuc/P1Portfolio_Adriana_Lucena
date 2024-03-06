@@ -29,9 +29,10 @@ namespace car {
 
         virtual void accelerate(float _time) = 0;
         virtual void deaccelerate(float _time) = 0;
-        virtual void brake() = 0;
+        virtual void brake(float _time) = 0;
         void goLeft();
         void goRight();
+        void goByCurrentSpeed();
         //void goBackwards(); -> is the same as deaccelerate().
 
     protected:

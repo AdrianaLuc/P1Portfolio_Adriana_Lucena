@@ -40,3 +40,7 @@ std::shared_ptr<car::component::Wheel> car::BaseCar::getWheels() {
 std::string car::BaseCar::getName() {
     return this->name;
 }
+
+void car::BaseCar::goByCurrentSpeed() {
+    std::cout << "going " << this->currentspeed << "m/s" << std::endl;
+}

@@ -39,6 +39,8 @@ void car::BMW::deaccelerate(float _time) {
     }
 }
 
-void car::BMW::brake() {
+void car::BMW::brake(float _time) {
     std::cout << "braking" <<std::endl;
+    this->currentspeed -= this->p_brakes->getFriction() * _time;
+    std::cout << "current speed: " << this->currentspeed * 3.6 << "km/h" <<std::endl;
 }

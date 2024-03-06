@@ -11,6 +11,6 @@ namespace car::component {
 
     class EngineDragonV2 : public component::Engine {
     public:
-        EngineDragonV2() : component::Engine("EngineDragonV2", 9.5) {}
+        EngineDragonV2() : component::Engine("EngineDragonV2", 4.5) {}
     };
 }

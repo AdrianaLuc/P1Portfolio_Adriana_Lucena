@@ -9,6 +9,6 @@ namespace car::component {
 
     class BrakesDragonV2 : public car::component::Brakes {
     public:
-        BrakesDragonV2() : Brakes("Brakes DragonV2", 10) {};
+        BrakesDragonV2() : Brakes("Brakes DragonV2", 15) {};
     };
 }

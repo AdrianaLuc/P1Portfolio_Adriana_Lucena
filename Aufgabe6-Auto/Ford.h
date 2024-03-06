@@ -20,7 +20,7 @@ namespace car {
 
         void accelerate(float _time) override;
         void deaccelerate(float _time) override;
-        void brake() override;
+        void brake(float _time) override;
 
     };
 }

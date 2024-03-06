@@ -18,10 +18,10 @@ car::Ford::Ford() {
 void car::Ford::accelerate(float _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
-        std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
-        this->currentspeed += this->p_engine->getAcceleration() * _time + this->p_wheels->getPowerTransmission() * _time;
+        std::cout << "current speed: " << this->currentspeed * 3.6 << "km/h" <<std::endl;
+        this->currentspeed += (this->p_engine->getAcceleration() * _time + this->p_wheels->getPowerTransmission() * _time);
         std::cout << "After " << _time << " seconds" <<std::endl;
-        std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
+        std::cout << "current speed: " << this->currentspeed * 3.6 << "km/h" <<std::endl;
     } else {
         std::cout << "Engine is off!" <<std::endl;
     }
@@ -30,15 +30,21 @@ void car::Ford::accelerate(float _time) {
 void car::Ford::deaccelerate(float _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
-        std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
+        std::cout << "current speed: " << this->currentspeed * 3.6 << "km/h" <<std::endl;
         this->currentspeed -= this->p_engine->getAcceleration() * _time + this->p_wheels->getPowerTransmission() * _time;
         std::cout << "After " << _time << " seconds" <<std::endl;
-        std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
+        std::cout << "current speed: " << this->currentspeed * 3.6 << "km/h" <<std::endl;
     } else {
         std::cout << "Engine is off!" <<std::endl;
     }
 }
 
-void car::Ford::brake() {
- std::cout << "braking" <<std::endl;
+void car::Ford::brake(float _time) {
+    if (this->currentspeed > 0) {
+        std::cout << "braking" <<std::endl;
+        this->currentspeed -= this->p_brakes->getFriction() * _time;
+        std::cout << "current speed: " << this->currentspeed * 3.6 << "km/h" <<std::endl;
+    } else {
+        std::cout << "Cannot brake if already stopped!" <<std::endl;
+    }
 }

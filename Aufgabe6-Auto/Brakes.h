@@ -16,6 +16,6 @@ namespace car::component {
 
     protected:
         const std::string name;
-        const int friction;
+        const float friction;
     };
 }
