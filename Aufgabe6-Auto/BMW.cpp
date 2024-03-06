@@ -1,19 +1,19 @@
 //
-// Created by adria on 05.03.2024.
+// Created by adria on 06.03.2024.
 //
 
-#include "Ford.h"
+#include "BMW.h"
 
-car::Ford::Ford() {
-    this->p_engine = std::make_shared<car::component::EngineDragonV2>();
-    this->p_brakes = std::make_shared<car::component::BrakesDragonV2>();
-    this->p_frame = std::make_shared<car::component::FrameDragonV2>();
-    this->p_gears = std::make_shared<car::component::GearsDragonV2>();
-    this->p_suspensions = std::make_shared<car::component::SuspensionDragonV2>();
-    this->p_wheels = std::make_shared<car::component::WheelDragonV2>();
+car::BMW::BMW() {
+    this->p_engine = std::make_shared<car::component::EngineDuratecV1>();
+    this->p_brakes = std::make_shared<car::component::BrakesDuratecV1>();
+    this->p_frame = std::make_shared<car::component::FrameDuratecV1>();
+    this->p_gears = std::make_shared<car::component::GearsDuratecV1>();
+    this->p_suspensions = std::make_shared<car::component::SuspensionDuratecV1>();
+    this->p_wheels = std::make_shared<car::component::WheelDuratecV1>();
 }
 
-void car::Ford::accelerate(int _time) {
+void car::BMW::accelerate(int _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
         std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
@@ -25,7 +25,7 @@ void car::Ford::accelerate(int _time) {
     }
 }
 
-void car::Ford::deaccelerate(int _time) {
+void car::BMW::deaccelerate(int _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
         std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
@@ -37,6 +37,6 @@ void car::Ford::deaccelerate(int _time) {
     }
 }
 
-void car::Ford::brake() {
- std::cout << "braking" <<std::endl;
+void car::BMW::brake() {
+    std::cout << "braking" <<std::endl;
 }

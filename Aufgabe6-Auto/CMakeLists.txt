@@ -41,7 +41,9 @@ add_executable(Aufgabe6 Aufgabe6.cpp
         WheelDragonV2.cpp
         WheelDragonV2.h
         Ford.cpp
-        Ford.h)
+        Ford.h
+        BMW.cpp
+        BMW.h)
 
 
 

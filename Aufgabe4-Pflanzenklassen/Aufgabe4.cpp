@@ -17,6 +17,8 @@
 // TODO: blätter, wurzeln und samen als eigene Klasse implementieren?
 // TODO: exceptions?
 
+// TODO: delete pointer!!!
+
 int main() {
     // Instances
     Plants::Tree tree;

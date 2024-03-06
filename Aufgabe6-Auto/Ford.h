@@ -11,13 +11,17 @@
 #include "SuspensionDragonV2.h"
 #include "WheelDragonV2.h"
 
-class Ford : public car::BaseCar{
-public:
-    Ford();
-    void accelerate(int _time) override;
-    void deaccelerate(int _time) override;
-    void brake() override;
 
-};
+namespace car {
 
+    class Ford : public car::BaseCar {
+    public:
+        Ford();
+
+        void accelerate(int _time) override;
+        void deaccelerate(int _time) override;
+        void brake() override;
+
+    };
+}
 
