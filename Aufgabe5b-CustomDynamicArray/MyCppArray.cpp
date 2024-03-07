@@ -42,7 +42,7 @@ int MyCppArray::biggestNumber() {
 }
 
 // Problem: bei Doppelung einer Nummer wird nur der Index der ersten Nummer im Array angegeben
-int MyCppArray::specificNumber(int _inputInt) {
+int MyCppArray::specificNumberIndex(int _inputInt) {
     for (int i = 0; i < numberOfElements(); i++) {
         if (p_array[i] == _inputInt) {
             return i;

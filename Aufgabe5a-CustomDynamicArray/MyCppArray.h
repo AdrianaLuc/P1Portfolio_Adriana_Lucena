@@ -12,7 +12,7 @@ public:
     int numberOfElements();
     int smallestNumber();
     int biggestNumber();
-    int specificNumber(int _inputInt);
+    int specificNumberIndex(int _inputInt);
 };
 
 

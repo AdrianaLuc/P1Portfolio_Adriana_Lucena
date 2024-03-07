@@ -30,7 +30,7 @@ int main() {
         std::cout << "Enter a number to get its index. If the output is -1, the number is not in the array."
                   << std::endl;
         std::cin >> inputInt;
-        std::cout << "Index: " << arr.specificNumber(inputInt) << std::endl;
+        std::cout << "Index: " << arr.specificNumberIndex(inputInt) << std::endl;
 
         std::cout << "Current size: " << arr.numberOfElements() << std::endl;
         std::cout << "Enter new size:" << std::endl;
