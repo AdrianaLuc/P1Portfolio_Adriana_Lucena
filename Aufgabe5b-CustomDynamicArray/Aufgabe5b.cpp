@@ -7,17 +7,14 @@
 
 int main() {
 
-    // TODO: Erklären üben -> was genau ist der Unterschied zu Aufgabe 5a und was macht .get()?
-    // TODO: shared pointer üben
-
     srand(time(nullptr));
 
     MyCppArray arr(100);
-
     bool quit = false;
 
     while (!quit) {
 
+        // fill array with random numbers
         for (int i = 0; i < arr.numberOfElements(); i++) {
             arr.p_array[i] = rand() % 100;
         }

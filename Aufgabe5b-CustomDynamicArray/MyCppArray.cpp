@@ -4,12 +4,13 @@
 
 #include "MyCppArray.h"
 
-// andere Varianten auf dem Heap zu allokieren nochmal anschauen
+
 MyCppArray::MyCppArray(int _inputSize) : size(_inputSize) {
     if (_inputSize >= 0) {
         p_array = new int[_inputSize];
     } else {
-        throw std::invalid_argument("Invalid size");
+        //throw std::invalid_argument("Invalid size");
+        p_array = nullptr;
     }
 }
 
@@ -22,6 +23,7 @@ int MyCppArray::numberOfElements() {
 }
 
 int MyCppArray::smallestNumber() {
+    // check for every element if it is smaller than the current smallest
     int smallest = p_array[0];
     for (int i = 0; i < numberOfElements(); i++) {
         if (p_array[i] < smallest) {
@@ -32,6 +34,7 @@ int MyCppArray::smallestNumber() {
 }
 
 int MyCppArray::biggestNumber() {
+    // check for every element if it is bigger than the current biggest
     int biggest = p_array[0];
     for (int i = 0; i < numberOfElements(); i++) {
         if (p_array[i] > biggest) {
@@ -43,6 +46,7 @@ int MyCppArray::biggestNumber() {
 
 // Problem: bei Doppelung einer Nummer wird nur der Index der ersten Nummer im Array angegeben
 int MyCppArray::specificNumberIndex(int _inputInt) {
+    // check every element if it is equal to the input and output its index
     for (int i = 0; i < numberOfElements(); i++) {
         if (p_array[i] == _inputInt) {
             return i;
@@ -52,7 +56,9 @@ int MyCppArray::specificNumberIndex(int _inputInt) {
 }
 
 void MyCppArray::resize(int _inputSize) {
+    // delete old array and create new one on the heap
     delete[] p_array;
+    // important for numberOfElements() function
     size = _inputSize;
     p_array = new int[_inputSize];
 }

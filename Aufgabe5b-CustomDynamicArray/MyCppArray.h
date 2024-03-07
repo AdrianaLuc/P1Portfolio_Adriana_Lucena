@@ -8,7 +8,7 @@
 
 class MyCppArray {
 public:
-    MyCppArray(int _inputSize);
+    explicit MyCppArray(int _inputSize);
     ~MyCppArray();
 
     int* p_array;
