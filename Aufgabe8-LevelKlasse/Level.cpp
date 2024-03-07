@@ -77,7 +77,7 @@ void Game::Level::checkClickAsteroid() {
     for (auto cookie: cookies) {
         hitboxCenterX = cookie->getHitbox().centerX;
         hitboxCenterY = cookie->getHitbox().centerY;
-        if (CheckCollisionPointCircle(mousePoint, {hitboxCenterX, hitboxCenterY}, cookie->getHitbox().radius)){
+        if (CheckCollisionPointCircle(mousePoint, {hitboxCenterX, hitboxCenterY}, cookie->getHitbox().radius)) {
             if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
                 cookie->posX = 0;
                 cookie->posY = 0;
@@ -88,15 +88,36 @@ void Game::Level::checkClickAsteroid() {
 }
 
 void Game::Level::preloadCookieCrumbs() {
-
-
-
     for (auto cookie: cookies) {
         for (auto crumb: cookie->cookieCrumbs) {
             crumb->loadTexture("CookieCrumb.png");
         }
     }
 }
+
+void Game::Level::cookieCollision() {
+
+
+    for (int i = 0; i < cookies.size(); ++i) {
+        for (int j = i + 1; j < cookies.size(); ++j) {
+            if (CheckCollisionCircles({cookies[i]->getHitbox().centerX, cookies[i]->getHitbox().centerY},
+                                      cookies[i]->getHitbox().radius,
+                                      {cookies[j]->getHitbox().centerX, cookies[j]->getHitbox().centerY},
+                                      cookies[j]->getHitbox().radius)) {
+                if (cookies[i]->getCrumbCounter() > 0 && cookies[j]->getCrumbCounter() > 0) {
+                    /*cookies[i]->setDirection({cookies[i]->getDirection().x * -1, cookies[i]->getDirection().y * -1});
+                    cookies[j]->setDirection({cookies[j]->getDirection().x * -1, cookies[j]->getDirection().y * -1});*/
+
+                    cookies.erase(cookies.begin() + j);
+                    cookies.erase(cookies.begin() + i);
+
+                }
+
+            }
+        }
+    }
+}
+
 
 
 

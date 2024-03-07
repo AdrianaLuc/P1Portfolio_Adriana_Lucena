@@ -12,6 +12,7 @@
 #include "utilityClasses.h"
 #include "utilitiyFunctions.h"
 #include "CookieCrumb.h"
+#include "raylib.h"
 
 namespace Game{
     class Level {
@@ -25,6 +26,10 @@ namespace Game{
         void setRandomDirection();
         void checkClickAsteroid();
         void preloadCookieCrumbs();
+        void spawnCookieCrumbs();
+        void drawCookieCrumbs();
+        void setCrumbCounter(int _crumbCounter);
+        void cookieCollision();
     };
 }
 

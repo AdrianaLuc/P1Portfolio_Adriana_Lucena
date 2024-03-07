@@ -33,7 +33,7 @@ int main() {
     levelOne.positionRandomly();
     levelOne.setRandomDirection();
     levelOne.setRandomSpeed();
-    levelOne.preloadCookieCrumbTextures();
+    levelOne.preloadCookieCrumbs();
 
 
     // Main game loop
@@ -43,6 +43,7 @@ int main() {
         //levelOne.update();
         levelOne.updateTest();
         levelOne.checkClickAsteroid();
+        levelOne.cookieCollision();
 
 
         BeginDrawing();

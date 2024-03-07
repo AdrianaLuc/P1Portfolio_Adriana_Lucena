@@ -18,8 +18,8 @@ namespace Game {
     public:
         Circle() = default;
         Circle(int _centerX, int _centerY, int _radius) : centerX(_centerX), centerY(_centerY), radius(_radius){};
-        int centerX;
-        int centerY;
+        float centerX;
+        float centerY;
         int radius;
     };
 }
