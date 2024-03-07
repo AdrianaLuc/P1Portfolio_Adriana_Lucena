@@ -9,6 +9,6 @@ namespace car::component {
 
     class BrakesDuratecV1 : public car::component::Brakes {
     public:
-        BrakesDuratecV1() : Brakes("Brakes DuratecV1", 10) {};
+        BrakesDuratecV1() : Brakes("Brakes DuratecV1", 10.0f) {};
     };
 }

@@ -13,10 +13,12 @@ bool car::component::Engine::isEngineOn() {
 }
 
 void car::component::Engine::startEngine() {
+    std::cout << "Engine started!\n";
     this->engineOn = true;
 }
 
 void car::component::Engine::stopEngine() {
+    std::cout << "Engine stopped!\n";
     this->engineOn = false;
 }
 

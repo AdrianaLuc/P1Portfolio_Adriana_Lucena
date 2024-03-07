@@ -9,7 +9,7 @@ namespace car::component {
 
     class SuspensionDuratecV1 : public car::component::Suspension {
     public:
-        SuspensionDuratecV1() : car::component::Suspension("Suspension DuratecV1", 100) {}
+        SuspensionDuratecV1() : car::component::Suspension("Suspension DuratecV1", 100.0f) {}
     };
 }
 

@@ -9,7 +9,7 @@ namespace car::component {
 
     class SuspensionDragonV2 : public car::component::Suspension {
     public:
-        SuspensionDragonV2() : Suspension("Suspension DragonV2", 200) {}
+        SuspensionDragonV2() : Suspension("Suspension DragonV2", 200.0f) {}
 
     };
 }

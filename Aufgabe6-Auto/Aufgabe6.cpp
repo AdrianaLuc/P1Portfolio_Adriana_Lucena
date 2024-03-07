@@ -2,15 +2,6 @@
 // Created by adria on 20.02.2024.
 //
 
-// TODO: Klassen in Ordnern ordnen (CMake!)
-// TODO: raylib implementation
-// TODO: wie funktionieren Autos????
-// TODO: weird while loop erklären können.
-
-// TODO: balancing und formeln umschreiben (habe ich alles von den components benutzt?)
-//  -> unterschiedliche formeln für die beiden autos!
-// vllt. TODO: Schaltung
-
 #include <limits>
 #include "iostream"
 #include "Ford.h"
@@ -19,19 +10,22 @@
 
 int main() {
 
+    // declarations
     std::shared_ptr<car::BaseCar> p_car = nullptr;
     int choice = 0;
     bool exit = false;
 
+    // initial choose car
     chooseCar(p_car);
 
-    // "Game Loop"
+    // Main Loop
     while (!exit) {
         std::cout << "\n Controls: \n 1. Start engine  |  2. Accelerate  |  3. Go backwards  |  4. Brake  "
                      "|  5. Go left  |  6. Go right  |  7. Change car  |  8. go by current speed  "
                      "|   9. Stop engine  |   10. Quit  \n"
                      "\n Please choose a number: \n";
 
+        // check if input is valid
         if (!(std::cin >> choice)) {
             std::cin.clear(); // clear bad input flag
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // discard input
@@ -39,7 +33,7 @@ int main() {
             continue; // Restart the loop
         }
 
-        // Code
+        // execute functions depending on user input
         if (choice == 1) {
             p_car->getEngine()->startEngine();
         } else if (choice == 2) {
@@ -64,8 +58,6 @@ int main() {
             std::cout << "Invalid input. Please try again!\n";
         }
 
-        std::cin.clear(); // clears the fail state so that future input operations can be attempted.
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //discards the invalid input (up to the maximum stream size or until a newline character is encountered).
     }
 
     return 0;

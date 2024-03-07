@@ -11,7 +11,7 @@ namespace car::component {
 
     class EngineDuratecV1 : public component::Engine {
     public:
-        EngineDuratecV1() : component::Engine("EngineDuratecV1", 3.5) {};
+        EngineDuratecV1() : component::Engine("EngineDuratecV1", 3.5f) {};
     };
 }
 

@@ -18,10 +18,12 @@ car::BMW::BMW() {
 void car::BMW::accelerate(float _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
-        std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
-        this->currentspeed += this->p_engine->getAcceleration() * _time + this->p_wheels->getPowerTransmission() * _time;
+        std::cout << "current speed: " << this->currentspeed << "km/h" <<std::endl;
+
+        this->currentspeed += (this->p_engine->getAcceleration() * _time + (this->p_wheels->getPowerTransmission() * _time) / 5) * 3.6;
+
         std::cout << "After " << _time << " seconds" <<std::endl;
-        std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
+        std::cout << "current speed: " << this->currentspeed << "km/h" <<std::endl;
     } else {
         std::cout << "Engine is off!" <<std::endl;
     }
@@ -30,10 +32,12 @@ void car::BMW::accelerate(float _time) {
 void car::BMW::deaccelerate(float _time) {
     if (this->p_engine->isEngineOn()) {
         std::cout << "Before " << _time << " seconds" <<std::endl;
-        std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
-        this->currentspeed -= this->p_engine->getAcceleration() * _time + this->p_wheels->getPowerTransmission() * _time;
+        std::cout << "current speed: " << this->currentspeed << "km/h" <<std::endl;
+
+        this->currentspeed -= (this->p_engine->getAcceleration() * _time + (this->p_wheels->getPowerTransmission() * _time) / 2) * 3.6;
+
         std::cout << "After " << _time << " seconds" <<std::endl;
-        std::cout << "current speed: " << this->currentspeed << "m/s" <<std::endl;
+        std::cout << "current speed: " << this->currentspeed << "km/h" <<std::endl;
     } else {
         std::cout << "Engine is off!" <<std::endl;
     }
@@ -42,5 +46,5 @@ void car::BMW::deaccelerate(float _time) {
 void car::BMW::brake(float _time) {
     std::cout << "braking" <<std::endl;
     this->currentspeed -= this->p_brakes->getFriction() * _time;
-    std::cout << "current speed: " << this->currentspeed * 3.6 << "km/h" <<std::endl;
+    std::cout << "current speed: " << this->currentspeed << "km/h" <<std::endl;
 }

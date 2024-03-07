@@ -45,7 +45,7 @@ float askForTimeInSeconds(){
     bool exit = false;
 
     while (!exit) {
-        std::cout << "\nPlease input for how long you want to accelerate (in seconds):\n ";
+        std::cout << "\nPlease input the time in seconds:\n ";
 
         if (!(std::cin >> timeInSeconds)) {
             std::cin.clear(); // clear bad input flag

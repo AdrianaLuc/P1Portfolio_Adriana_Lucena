@@ -19,7 +19,7 @@ namespace car::component {
 
     protected:
         const std::string name;
-        const float acceleration;
+        float acceleration;
         bool engineOn = false;
     };
 }
