@@ -11,6 +11,7 @@
 int main(){
     // set seed for rand()
     srand (time(nullptr));
+
     int pointsPlayer = 0;
     int pointsComputer = 0;
     int dieType = 0;
