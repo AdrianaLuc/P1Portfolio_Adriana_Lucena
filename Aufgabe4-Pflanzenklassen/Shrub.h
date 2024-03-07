@@ -5,7 +5,7 @@
 #pragma once
 #include "Plant.h"
 
-namespace Plants {
+namespace plants {
     class Shrub : public Plant {
     public:
         Shrub(): Plant("Shrub", "brown",0.2, 0.006){};

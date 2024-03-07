@@ -4,7 +4,7 @@
 
 #include "Shrub.h"
 
-float Plants::Shrub::calculateAverageHeight(float timeInDays) {
+float plants::Shrub::calculateAverageHeight(float timeInDays) {
     this->averageHeight = this->seeds.seedDiameter + timeInDays * this->growthRate;
     if (this->averageHeight <= 3) {
         return this->averageHeight;

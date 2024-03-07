@@ -6,7 +6,7 @@
 #include "iostream"
 #include "vector"
 
-namespace Plants {
+namespace plants {
 
     struct Root {
         Root() = default;

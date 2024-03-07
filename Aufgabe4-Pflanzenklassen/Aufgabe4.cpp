@@ -8,27 +8,16 @@
 #include "Tree.h"
 #include "Flower.h"
 
-
-// TODO: calculate rootLength implementieren
-// TODO: user mehr Abfragemöglichkeiten geben
-// TODO: exit condition implementieren
-// TODO: fix switch case breaking when invalid choice is entered
-// TODO: Raylib Implementation
-// TODO: blätter, wurzeln und samen als eigene Klasse implementieren?
-// TODO: exceptions?
-
-// TODO: delete pointer!!!
-
 int main() {
 
-    std::shared_ptr<Plants::Plant> p_plant = nullptr;
+    std::shared_ptr<plants::Plant> p_plant = nullptr;
     bool exit = false;
     int choice;
 
     info();
     choosePlant(p_plant);
 
-
+    // Main loop
     while (!exit) {
         std::cout << "\nEnter 1 to get the average height of the plant.";
         std::cout << "\nEnter 2 to get the leaf color of the plant.";
@@ -36,6 +25,7 @@ int main() {
         std::cout << "\nEnter 4 to choose a different plant";
         std::cout << "\nEnter 5 to exit";
 
+        // Check for valid input
         if (!(std::cin >> choice)) {
             std::cin.clear(); // clear bad input flag
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // discard input
@@ -43,6 +33,7 @@ int main() {
             continue; // Restart the loop
         }
 
+        // call getAverageHeight or getLeafColor or getSeedDiameter based on user input
         switch (choice) {
             case 1:
                 getAverageHeight(p_plant);

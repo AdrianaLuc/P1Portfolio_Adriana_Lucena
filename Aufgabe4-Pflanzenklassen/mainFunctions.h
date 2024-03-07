@@ -8,5 +8,5 @@
 #include "Plant.h"
 
 void info();
-void choosePlant(std::shared_ptr<Plants::Plant>& _p_plant);
-void getAverageHeight(std::shared_ptr<Plants::Plant>& _p_plant);
+void choosePlant(std::shared_ptr<plants::Plant>& _p_plant);
+void getAverageHeight(std::shared_ptr<plants::Plant>& _p_plant);

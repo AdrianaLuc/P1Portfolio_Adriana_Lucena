@@ -6,7 +6,7 @@
 #include "iostream"
 #include "Plant.h"
 
-namespace Plants{
+namespace plants{
     class Grass : public Plant{
     public:
         Grass(): Plant("Grass", "green", 0.3, 0.01){};

@@ -5,23 +5,23 @@
 #include "Plant.h"
 
 // getter
-std::string Plants::Plant::getLeafColor() {
+std::string plants::Plant::getLeafColor() {
     return this->leafs.leafColor;
 }
 
-float Plants::Plant::getSeedDiameter() {
+float plants::Plant::getSeedDiameter() {
     return this->seeds.seedDiameter;
 }
 
 // setter
-void Plants::Plant::setLeafColor(std::string _leafColor) {
+void plants::Plant::setLeafColor(std::string _leafColor) {
     this->leafs.leafColor = _leafColor;
 }
 
-void Plants::Plant::setSeedDiameter(float _seedDiameter) {
+void plants::Plant::setSeedDiameter(float _seedDiameter) {
     this->seeds.seedDiameter = _seedDiameter;
 }
 
-std::string Plants::Plant::getName() {
+std::string plants::Plant::getName() {
     return this->name;
 }

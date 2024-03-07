@@ -8,7 +8,7 @@
 #include "iostream"
 #include "math.h"
 
-namespace Plants {
+namespace plants {
 
     class Tree : public Plant {
     public:
