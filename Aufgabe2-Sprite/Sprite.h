@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace Sprites {
+namespace sprites {
     struct Koordinaten {
         float x;
         float y;
@@ -24,7 +24,7 @@ namespace Sprites {
         int height;
         Frame frames[10];
         Frame* currentFramePointer = &frames[0];
-        // anonymous enum
+        // anonymous enum -> brauche ich gerade nur hier (lokal)
         enum typ{
             animate,
             character,
