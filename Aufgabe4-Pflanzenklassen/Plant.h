@@ -8,6 +8,7 @@
 
 namespace plants {
 
+    // #################################################################################
     struct Root {
         Root() = default;
         Root(float _rootLength) : rootLength(_rootLength){};
@@ -23,6 +24,7 @@ namespace plants {
         Seed(float _seedDiameter) : seedDiameter(_seedDiameter){};
         float seedDiameter;
     };
+    // #################################################################################
 
     class Plant {
     public:
@@ -35,15 +37,14 @@ namespace plants {
         void setLeafColor(std::string _leafColor);
         void setSeedDiameter(float _seedDiameter);
 
-        virtual float calculateAverageHeight(float timeInDays) = 0;
-        //virtual float calculateRootLength();
+        virtual float calculateAverageHeight(float _timeInDays) = 0;
+        //virtual float calculateRootLength(float _timeInDays) = 0;
     protected:
         Plant(std::string _name, std::string _leafColor, float _seedDiameter, float _growthRate) :name(_name), leafs(_leafColor), seeds(_seedDiameter), growthRate(_growthRate){};
         float averageHeight;
         std::string name;
 
         Root roots;
-        // TODO (Idee): (vielleicht): Anzahl der Blätter steigt mit der Zeit (und der Höhe der Pflanze)?
         Leaf leafs;
         Seed seeds;
         float growthRate;

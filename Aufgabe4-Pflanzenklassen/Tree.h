@@ -6,14 +6,13 @@
 
 #include "Plant.h"
 #include "iostream"
-#include "math.h"
 
 namespace plants {
 
     class Tree : public Plant {
     public:
         Tree(): Plant("Tree", "green", 0.5, 0.005){};
-        float calculateAverageHeight(float timeInDays) override;
+        float calculateAverageHeight(float _timeInDays) override;
     };
 }
 

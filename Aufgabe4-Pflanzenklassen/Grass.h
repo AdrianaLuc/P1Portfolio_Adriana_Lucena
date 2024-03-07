@@ -10,7 +10,7 @@ namespace plants{
     class Grass : public Plant{
     public:
         Grass(): Plant("Grass", "green", 0.3, 0.01){};
-        float calculateAverageHeight(float timeInDays) override;
+        float calculateAverageHeight(float _timeInDays) override;
     };
 }
 
