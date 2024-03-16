@@ -5,7 +5,7 @@
 #pragma once
 
 #include "raylib.h"
-#include "math.h"
+#include "cmath"
 
 namespace Game {
     class Vector2Int {

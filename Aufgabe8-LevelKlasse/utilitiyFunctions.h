@@ -4,7 +4,7 @@
 
 #pragma once
 #include "raylib.h"
-#include "math.h"
+#include "cmath"
 #include "utilityClasses.h"
 
 
