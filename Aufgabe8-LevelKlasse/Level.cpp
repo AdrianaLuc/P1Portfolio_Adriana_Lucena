@@ -105,8 +105,9 @@ void Game::Level::cookieCollision() {
                                       {cookies[j]->getHitbox().centerX, cookies[j]->getHitbox().centerY},
                                       cookies[j]->getHitbox().radius)) {
                 if (cookies[i]->getCrumbCounter() > 0 && cookies[j]->getCrumbCounter() > 0) {
-                    /*cookies[i]->setDirection({cookies[i]->getDirection().x * -1, cookies[i]->getDirection().y * -1});
-                    cookies[j]->setDirection({cookies[j]->getDirection().x * -1, cookies[j]->getDirection().y * -1});*/
+
+                    //cookies[i]->setDirection({cookies[i]->getDirection().x * -1, cookies[i]->getDirection().y * -1});
+                    //cookies[j]->setDirection({cookies[j]->getDirection().x * -1, cookies[j]->getDirection().y * -1});
 
                     cookies.erase(cookies.begin() + j);
                     cookies.erase(cookies.begin() + i);

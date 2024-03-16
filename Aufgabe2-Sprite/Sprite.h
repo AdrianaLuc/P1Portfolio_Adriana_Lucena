@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "raylib.h"
 
 namespace sprites {
     struct Koordinaten {
