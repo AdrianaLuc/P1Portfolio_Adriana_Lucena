@@ -46,7 +46,7 @@ void car::Ford::deaccelerate(float _time) {
 void car::Ford::brake(float _time) {
     if (this->currentspeed > 0) {
         std::cout << "braking" <<std::endl;
-        this->currentspeed -= this->p_brakes->getFriction() * _time;
+        this->currentspeed -= this->p_brakes->getFriction() * _time * 1.2;
         std::cout << "current speed: " << this->currentspeed << "km/h" <<std::endl;
     } else {
         std::cout << "Cannot brake if already stopped!" <<std::endl;
